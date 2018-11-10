@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Pizza.Models.Animal>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>
+        @Html.ActionLink("Dodaj nowe zwierzę","Add")
+    </h2>
+    <div>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Name  </li>
+                <li>@item.LegsCount</li>
+                @Html.ActionLink("Edytuj", "Add",new { id = item.Id })
+            }
+        </ul>
+        </div>
+</body>
+</html>
